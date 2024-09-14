@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cantina
@@ -21,13 +14,56 @@ namespace Cantina
         {
             txtDescricao.Enabled = true;
             txtDescricao.Focus();
-                   
+
         }
 
         private void rdbNome_CheckedChanged(object sender, EventArgs e)
         {
             txtDescricao.Enabled = true;
             txtDescricao.Focus();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (rdbCodigo.Checked)
+            {
+                if (!txtDescricao.Text.Equals(""))
+
+                {
+                    ltbPesquisar.Items.Clear();
+                    ltbPesquisar.Items.Add(txtDescricao.Text);
+                    
+                }
+
+            }
+
+            if (rdbNome.Checked)
+            {
+                if (!txtDescricao.Text.Equals(""))
+
+                {
+                    ltbPesquisar.Items.Clear();
+                    ltbPesquisar.Items.Add(txtDescricao.Text);
+
+                }
+
+            }
+        }
+ 
+        public void limparCampos()
+        {
+
+            txtDescricao.Clear();
+            rdbCodigo.Checked = false;
+            rdbNome.Checked = false;
+            ltbPesquisar.Items.Clear();
+            txtDescricao.Enabled = true;
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
         }
     }
 }
