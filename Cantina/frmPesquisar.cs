@@ -8,12 +8,17 @@ namespace Cantina
         public frmPesquisar()
         {
             InitializeComponent();
+            btnPesquisar.Enabled = false;
+            btnLimpar.Enabled = false;
+
         }
 
         private void rdbCodigo_CheckedChanged(object sender, EventArgs e)
         {
             txtDescricao.Enabled = true;
             txtDescricao.Focus();
+            btnPesquisar.Enabled = true;
+            btnLimpar.Enabled = true;
 
         }
 
@@ -21,6 +26,9 @@ namespace Cantina
         {
             txtDescricao.Enabled = true;
             txtDescricao.Focus();
+            btnPesquisar.Enabled = true;
+            btnLimpar.Enabled = true;
+
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -32,16 +40,13 @@ namespace Cantina
                 {
                     ltbPesquisar.Items.Clear();
                     ltbPesquisar.Items.Add(txtDescricao.Text);
-
                 }
 
                 else
                 {
                     MessageBox.Show("digitae, burro :(");
                     txtDescricao.Focus();
-
-
-
+               
                 }
 
             }
@@ -53,9 +58,12 @@ namespace Cantina
                 {
                     ltbPesquisar.Items.Clear();
                     ltbPesquisar.Items.Add(txtDescricao.Text);
-
+                      }
+                else
+                {
+                    MessageBox.Show("digitae, burro :(");
+                    txtDescricao.Focus();
                 }
-
             }
         }
 
@@ -67,6 +75,8 @@ namespace Cantina
             rdbNome.Checked = false;
             ltbPesquisar.Items.Clear();
             txtDescricao.Enabled = true;
+            btnPesquisar.Enabled = false;
+            btnLimpar.Enabled = false;
 
         }
 
