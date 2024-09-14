@@ -32,7 +32,16 @@ namespace Cantina
                 {
                     ltbPesquisar.Items.Clear();
                     ltbPesquisar.Items.Add(txtDescricao.Text);
-                    
+
+                }
+
+                else
+                {
+                    MessageBox.Show("digitae, burro :(");
+                    txtDescricao.Focus();
+
+
+
                 }
 
             }
@@ -49,7 +58,7 @@ namespace Cantina
 
             }
         }
- 
+
         public void limparCampos()
         {
 
